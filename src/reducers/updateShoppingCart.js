@@ -59,14 +59,6 @@ const updateCartItems = (cartItems, newCartItem, cartItemIndex) => {
     ]
 };
 
-const updateOrderTotal = (cartItems) => {
-    let result = 0;
-    for(let { total } of cartItems) {
-        result += total;
-    }
-    return result;
-};
-
 const updateOrder = (state, bookId, quantity) => {
     const { bookList: { books }, shoppingCart: { cartItems }} = state;
     //ищем книгу по id
@@ -80,7 +72,7 @@ const updateOrder = (state, bookId, quantity) => {
     const resultCartItems = updateCartItems(cartItems, newCartItem, cartItemIndex);
     return {
         cartItems: resultCartItems,
-        orderTotal: updateOrderTotal(resultCartItems)
+        orderTotal: resultCartItems.map(( {total} ) => total ).reduce((a = 0, b = 0) => a + b, 0)
     }
 }
 
