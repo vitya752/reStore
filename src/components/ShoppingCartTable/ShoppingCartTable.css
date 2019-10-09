@@ -1,0 +1,11 @@
+.shopping-cart-table .table th,
+.shopping-cart-table .table td{
+    text-align: center;
+}
+.shopping-cart-table .table button{
+    margin: 0 3px;
+}
+.shopping-cart-table .total{
+    text-align: right;
+    font-size: 1.3rem;
+}
