@@ -23,7 +23,6 @@ class BookListContainer extends Component {
 
     render() {
         const { books, error, loading, bookAddedToCart, searchTerm } = this.props;
-        console.log(searchTerm);
         const renderBooks = onSearch(books, searchTerm);
         if( error ) {
             return <ErrorIndicator />

@@ -3,6 +3,11 @@ const updateFilter = (state, action) => {
     if( state === undefined ) {
         return {
             searchTerm: '',
+            categories: [
+                { label: 'Post-apocalyptic', name: 'post-apocalyptic', checked: false },
+                { label: 'Fantasy', name: 'fantasy', checked: false },
+                { label: 'Horror', name: 'horror', checked: false }
+            ],
             checkedCategories: []
         }
     }

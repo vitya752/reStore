@@ -46,6 +46,13 @@ const formSubmitSearchTerm = (searchTerm) => {
     }
 }
 
+const checkboxChangeStatus = (label) => {
+    return {
+        type: 'CHECKBOX_CHANGE_STATUS',
+        payload: label
+    }
+}
+
 export {
     booksLoaded,
     booksRequested,
@@ -53,5 +60,6 @@ export {
     bookAddedToCart,
     bookDeletedFromCart,
     bookDecreaseCart,
-    formSubmitSearchTerm
+    formSubmitSearchTerm,
+    checkboxChangeStatus
 }
