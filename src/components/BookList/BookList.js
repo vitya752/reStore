@@ -22,7 +22,9 @@ class BookListContainer extends Component {
     }
 
     render() {
-        const { books, error, loading, bookAddedToCart } = this.props;
+        const { books, error, loading, bookAddedToCart, searchTerm } = this.props;
+        console.log(searchTerm);
+        const renderBooks = onSearch(books, searchTerm);
         if( error ) {
             return <ErrorIndicator />
         }
@@ -30,7 +32,9 @@ class BookListContainer extends Component {
             return <Spinner />
         }
         return(
-            <BookList books={books} onAddedToCart={bookAddedToCart} />
+            <BookList 
+                books={renderBooks} 
+                onAddedToCart={bookAddedToCart} />
         )
     }
 }
@@ -55,11 +59,17 @@ const BookList = ({books, onAddedToCart}) => {
     )
 };
 
+const onSearch = (books, searchTerm) => {
+    if( searchTerm.length === 0 ) return books;
+    return books.filter(({title}) => title.toLowerCase().includes(searchTerm.toLowerCase()) !== false );
+};
+
 const mapStateToProps = (state) => {
     return {
         books: state.bookList.books,
         loading: state.bookList.loading,
-        error: state.bookList.error
+        error: state.bookList.error,
+        searchTerm: state.filter.searchTerm
         /* 
         передать свойство books в компонент (this.props.books), 
         значение которого взято из state

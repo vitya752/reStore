@@ -39,11 +39,19 @@ const bookDecreaseCart = (bookId) => {
     }
 }
 
+const formSubmitSearchTerm = (searchTerm) => {
+    return {
+        type: 'FORM_SUBMIT_SEARCH_TERM',
+        payload: searchTerm
+    }
+}
+
 export {
     booksLoaded,
     booksRequested,
     booksError,
     bookAddedToCart,
     bookDeletedFromCart,
-    bookDecreaseCart
+    bookDecreaseCart,
+    formSubmitSearchTerm
 }
