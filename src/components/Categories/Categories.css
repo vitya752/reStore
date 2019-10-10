@@ -1,0 +1,40 @@
+.genres .genres-item > div{
+    position: relative;
+}
+.genres .genres-item input{
+    left: -999px;
+}
+.genres .genres-item label{
+    display: block;
+    cursor: pointer;
+}
+.genres .genres-item > div:before,
+.genres .genres-item .check-indicator{
+    content: '';
+    display: block;
+    position: absolute;
+}
+.genres .genres-item > div:before{
+    left: 0;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 1);
+}
+.genres .genres-item .check-indicator{
+    top: 7px;
+    left: 100%;
+    z-index: 1;
+    width: 10px;
+    height: 10px;
+    transition: .5s, box-shadow .5s .5s;
+    box-shadow: none;
+    transform: translateX(-100%);
+    background-color: rgba(0, 0, 0, .2);
+}
+.genres .genres-item input:checked + .check-indicator{
+    left: 11px;
+    background-color: rgb(255, 176, 0);
+    box-shadow: 0px 0px 20px 5px rgb(255, 0, 0);
+}

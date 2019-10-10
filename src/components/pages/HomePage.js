@@ -1,9 +1,13 @@
 import React from 'react';
+import Categories from '../Categories/Categories';
 import BookList from '../BookList/BookList';
 
 const HomePage = () => {
     return (
-        <BookList />
+        <div className="row">
+            <Categories />
+            <BookList />
+        </div>
     )
 }
 

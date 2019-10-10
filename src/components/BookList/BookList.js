@@ -37,11 +37,13 @@ class BookListContainer extends Component {
 
 const BookList = ({books, onAddedToCart}) => {
     return(
-        <ul className="book-list">
+        <ul className="row col-12 col-sm-9 book-list">
             {
                 books.map((book) => {
                     return (
-                        <li key={book.id}>
+                        <li 
+                            className="col-6 col-sm-3"
+                            key={book.id}>
                             <BookListItem 
                                 onAddedToCart={() => onAddedToCart(book.id)}
                                 book={book} />
