@@ -5,8 +5,7 @@ import { connect } from 'react-redux';
 
 class SearchContainer extends Component {
     state = {
-        searchTerm: '',
-        disableSubmit: true
+        searchTerm: ''
     }
 
     render() {
@@ -21,8 +20,7 @@ class SearchContainer extends Component {
 
     onChangeTerm = (e) => {
         this.setState({
-            searchTerm: e.target.value,
-            disableSubmit: e.target.value.length > 0 ? false : true
+            searchTerm: e.target.value
         })
     }
 
@@ -36,7 +34,9 @@ class SearchContainer extends Component {
 
 const Search = ({ onSubmit, onChangeTerm, searchTerm, disableSubmit }) => {
     return (
-        <form onSubmit={onSubmit}>
+        <form 
+            className="col-12 col-md-6"
+            onSubmit={onSubmit}>
             <div className="input-group">
                 <input 
                     type="text" 
@@ -48,8 +48,7 @@ const Search = ({ onSubmit, onChangeTerm, searchTerm, disableSubmit }) => {
                 <div className="input-group-append">
                     <button 
                         className="btn btn-primary" 
-                        type="submit"
-                        disabled={disableSubmit} >Search</button>
+                        type="submit" >Search</button>
                 </div>
             </div>
         </form>

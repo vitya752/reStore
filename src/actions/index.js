@@ -46,10 +46,10 @@ const formSubmitSearchTerm = (searchTerm) => {
     }
 }
 
-const checkboxChangeStatus = (label) => {
+const checkboxChangeStatus = (name) => {
     return {
         type: 'CHECKBOX_CHANGE_STATUS',
-        payload: label
+        payload: name
     }
 }
 

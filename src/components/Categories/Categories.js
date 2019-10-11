@@ -5,11 +5,10 @@ import { checkboxChangeStatus } from './../../actions';
 import './Categories.css';
 
 const Categories = ({ categories, checkboxChangeStatus }) => {
-    console.log(categories);
     return (
-        <ul className="col-3 list-group genres">
+        <ul className="col-12 col-lg-3 list-group genres">
             {
-                categories.map(({ label, name, checked }, idx) => {
+                categories.map(({ id, label, name, checked }, idx) => {
                     return (
                         <li 
                             key={idx}
@@ -20,7 +19,7 @@ const Categories = ({ categories, checkboxChangeStatus }) => {
                                     type="checkbox" 
                                     value={name} 
                                     id={name}
-                                    onChange={(event) => onChangeCheckbox(event, checkboxChangeStatus)}
+                                    onChange={(event) => onChangeCheckbox(event, checkboxChangeStatus, id)}
                                     checked={checked} />
                                 <div className="check-indicator"></div>
                                 <label className="form-check-label" htmlFor={name}>
@@ -35,9 +34,8 @@ const Categories = ({ categories, checkboxChangeStatus }) => {
     )
 }
 
-const onChangeCheckbox = (e, checkboxChangeStatus) => {
-    console.log(e.target.value)
-    checkboxChangeStatus(e.target.value);
+const onChangeCheckbox = (e, checkboxChangeStatus, id) => {
+    checkboxChangeStatus(id);
 }
 
 const mapStateToProps = (state) => {

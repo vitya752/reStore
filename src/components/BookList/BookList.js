@@ -22,8 +22,10 @@ class BookListContainer extends Component {
     }
 
     render() {
-        const { books, error, loading, bookAddedToCart, searchTerm } = this.props;
-        const renderBooks = onSearch(books, searchTerm);
+        const { books, error, loading, bookAddedToCart, searchTerm, checkedCategories } = this.props;
+        // const renderBooks = onSearch(books, searchTerm);
+        console.log(checkedCategories);
+        const renderBooks = onFilter(books, checkedCategories);
         if( error ) {
             return <ErrorIndicator />
         }
@@ -40,7 +42,7 @@ class BookListContainer extends Component {
 
 const BookList = ({books, onAddedToCart}) => {
     return(
-        <ul className="row col-12 col-sm-9 book-list">
+        <ul className="row col-12 col-lg-9 book-list">
             {
                 books.map((book) => {
                     return (
@@ -63,12 +65,19 @@ const onSearch = (books, searchTerm) => {
     return books.filter(({title}) => title.toLowerCase().includes(searchTerm.toLowerCase()) !== false );
 };
 
+const onFilter = (books, checkedCategories) => {
+    // console.log(checkedCategories);
+    if( checkedCategories.length === 0 ) return books;
+    return books.filter(({category}) => checkedCategories.some(({name}) => category === name));
+}
+
 const mapStateToProps = (state) => {
     return {
         books: state.bookList.books,
         loading: state.bookList.loading,
         error: state.bookList.error,
-        searchTerm: state.filter.searchTerm
+        searchTerm: state.filter.searchTerm,
+        checkedCategories: state.filter.checkedCategories
         /* 
         передать свойство books в компонент (this.props.books), 
         значение которого взято из state
