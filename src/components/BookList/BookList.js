@@ -40,7 +40,7 @@ class BookListContainer extends Component {
 
 const BookList = ({books, onAddedToCart}) => {
     return(
-        <ul className="row col-12 col-lg-9 book-list">
+        <ul className="row book-list">
             {
                 books.map((book) => {
                     return (

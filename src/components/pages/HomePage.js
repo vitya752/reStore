@@ -1,12 +1,16 @@
 import React from 'react';
-import Categories from '../Categories/Categories';
+import Filter from './../Filter/Filter';
 import BookList from '../BookList/BookList';
 
 const HomePage = () => {
     return (
         <div className="row">
-            <Categories />
-            <BookList />
+            <div className="col-12 col-lg-3">
+                <Filter />
+            </div>
+            <div className="col-12 col-lg-9">
+                <BookList />
+            </div>
         </div>
     )
 }
