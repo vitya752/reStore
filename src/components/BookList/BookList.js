@@ -22,8 +22,8 @@ class BookListContainer extends Component {
     }
 
     render() {
-        const { books, error, loading, bookAddedToCart, searchTerm, checkedCategories } = this.props;
-        const renderBooks = onSearch(onFilter(books, checkedCategories), searchTerm);
+        const { books, error, loading, bookAddedToCart, searchTerm, checkedCategories, maxPrice } = this.props;
+        const renderBooks = onSearch(onCategoriesFilter(onMaxPriceFilter(books, maxPrice), checkedCategories, maxPrice), searchTerm);
         if( error ) {
             return <ErrorIndicator />
         }
@@ -63,10 +63,14 @@ const onSearch = (books, searchTerm) => {
     return books.filter(({title}) => title.toLowerCase().includes(searchTerm.toLowerCase()) !== false );
 };
 
-const onFilter = (books, checkedCategories) => {
-    // console.log(checkedCategories);
+const onCategoriesFilter = (books, checkedCategories) => {
     if( checkedCategories.length === 0 ) return books;
     return books.filter(({category}) => checkedCategories.some(({name}) => category === name));
+}
+
+const onMaxPriceFilter = (books, maxPrice) => {
+    if( maxPrice === 0 ) return books;
+    return books.filter(({price}) => price <= maxPrice);
 }
 
 const mapStateToProps = (state) => {
@@ -75,7 +79,8 @@ const mapStateToProps = (state) => {
         loading: state.bookList.loading,
         error: state.bookList.error,
         searchTerm: state.filter.searchTerm,
-        checkedCategories: state.filter.checkedCategories
+        checkedCategories: state.filter.checkedCategories,
+        maxPrice: state.filter.maxPrice
         /* 
         передать свойство books в компонент (this.props.books), 
         значение которого взято из state

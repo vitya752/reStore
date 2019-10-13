@@ -8,7 +8,8 @@ const updateFilter = (state, action) => {
                 { id: 2, label: 'Fantasy', name: 'fantasy', checked: false },
                 { id: 3, label: 'Horror', name: 'horror', checked: false }
             ],
-            checkedCategories: []
+            checkedCategories: [],
+            maxPrice: 100
         }
     }
 
@@ -17,10 +18,15 @@ const updateFilter = (state, action) => {
             return {
                 ...state.filter,
                 searchTerm: action.payload
-            }
+            };
         case 'CHECKBOX_CHANGE_STATUS':
-            return updateCategories(state, action.payload)
-        default:
+            return updateCategories(state, action.payload);
+        case 'MAXPRICE_CHANGE_VALUE':
+            return {
+                ...state.filter,
+                maxPrice: action.payload
+            };
+            default:
             return state.filter;
     }
 

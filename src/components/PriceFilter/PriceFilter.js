@@ -1,26 +1,41 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Slider from 'react-input-slider';
 import './PriceFilter.css';
+import { maxPriceChangeValue } from './../../actions';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-class PriceFilter extends Component {
+const PriceFilter = ({ maxPrice, maxPriceChangeValue }) => {
+    return (
+        <div className="filter mb-3">
+            <span className="name-filter">Max price: ${maxPrice}</span>
+            <Slider
+                xmax={300}
+                className="price-filter"
+                axis="x"
+                x={maxPrice}
+                onChange={({x}) => maxPriceChangeValue(x)}                    
+                />
+        </div>
+    )
+}
 
-    state = {
-        price: 10
-    }
+// const maxPriceFromBooks = (books) => {
+//     const prices = books.map(({price}) => price);
+//     console.log(Math.max(...prices));
+//     return Math.max(...prices);
+// }
 
-    render() {
-        return (
-            <div className="filter mb-3">
-                <span className="name-filter">Max price: ${this.state.price}</span>
-                <Slider
-                    className="price-filter"
-                    axis="x"
-                    x={this.state.price}
-                    onChange={({x}) => this.setState({ price: x })}                    
-                    />
-            </div>
-        )
+const mapStateToProps = (state) => {
+    return {
+        maxPrice: state.filter.maxPrice
     }
 }
 
-export default PriceFilter;
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({
+        maxPriceChangeValue
+    }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PriceFilter);

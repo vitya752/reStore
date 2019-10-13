@@ -53,6 +53,13 @@ const checkboxChangeStatus = (name) => {
     }
 }
 
+const maxPriceChangeValue = (value) => {
+    return {
+        type: 'MAXPRICE_CHANGE_VALUE',
+        payload: value
+    }
+}
+
 export {
     booksLoaded,
     booksRequested,
@@ -61,5 +68,6 @@ export {
     bookDeletedFromCart,
     bookDecreaseCart,
     formSubmitSearchTerm,
-    checkboxChangeStatus
+    checkboxChangeStatus,
+    maxPriceChangeValue
 }

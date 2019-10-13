@@ -4,7 +4,7 @@ export default class BookstoreService {
             id: 1,
             title: 'Metro 2033',
             author: 'Dmitriy Gluhovskiy',
-            price: 3.36,
+            price: 6.36,
             category: 'fantasy',
             img: 'https://images2.medimops.eu/product/7a56c9/M03453529685-source.jpg'    
         },
@@ -12,7 +12,7 @@ export default class BookstoreService {
             id: 2,
             title: 'Metro 2034',
             author: 'Dmitriy Gluhovskiy',
-            price: 3.99,
+            price: 16.99,
             category: 'post-apocalyptic',
             img: 'https://images2.medimops.eu/product/230384/M03453316312-source.jpg'
         }
