@@ -6,9 +6,9 @@ import './ShopHeader.css';
 const ShopHeader = ({numItems, total}) => {
     return(
         <header className="row shop-header mb-3">
-            <Link to="/" className="col-12 col-md-3 logo text-dark">ReStore</Link>
+            <Link to="/reStore" className="col-12 col-md-3 logo text-dark">BookStore</Link>
             <Search />
-            <Link to="/cart">
+            <Link to="/reStore/cart">
                 <i className="col-12 col-md-3 icon-cart fa fa-shopping-cart"></i>
                 {numItems} items (${total})
             </Link>

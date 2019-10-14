@@ -1,15 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './BookListItem.css';
 
 const BookListItem = ({ book, onAddedToCart }) => {
-    const { title, author, price, img } = book;
+    const { id, title, author, price, img } = book;
     return(
         <div className="book-list-item mb-3">
             <div className="book-cover">
                 <img src={img} alt={title} />
             </div>
             <div className="book-details">
-                <span className="book-title">{title}</span>
+                <Link to={`/reStore/${id}`} className="book-title">{title}</Link>
                 <div className="book-author">{author}</div>
                 <div className="book-price">${price}</div>
                 <button 
