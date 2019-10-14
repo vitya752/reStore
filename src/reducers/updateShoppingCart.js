@@ -72,7 +72,7 @@ const updateOrder = (state, bookId, quantity) => {
     const resultCartItems = updateCartItems(cartItems, newCartItem, cartItemIndex);
     return {
         cartItems: resultCartItems,
-        orderTotal: resultCartItems.map(( {total} ) => total ).reduce((a = 0, b = 0) => a + b, 0)
+        orderTotal: (resultCartItems.map(( {total} ) => total ).reduce((a = 0, b = 0) => a + b, 0)).toFixed(2)
     }
 }
 

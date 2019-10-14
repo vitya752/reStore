@@ -48,7 +48,7 @@ const BookList = ({books, onAddedToCart}) => {
                 books.map((book) => {
                     return (
                         <li 
-                            className="col-6 col-sm-3"
+                            className="col-6 col-sm-4 col-lg-3"
                             key={book.id}>
                             <BookListItem 
                                 onAddedToCart={() => onAddedToCart(book.id)}

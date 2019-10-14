@@ -5,7 +5,7 @@ export default class BookstoreService {
             title: 'Metro 2033',
             author: 'Dmitriy Gluhovskiy',
             price: 6.36,
-            category: 'fantasy',
+            category: 'post-apocalyptic',
             description: `The year is 2033. The world has been reduced to rubble. 
                 Humanity is nearly extinct. The half-destroyed cities have become 
                 uninhabitable through radiation. Beyond their boundaries, they say, 
@@ -39,7 +39,7 @@ export default class BookstoreService {
             id: 2,
             title: 'Metro 2034',
             author: 'Dmitriy Gluhovskiy',
-            price: 16.99,
+            price: 7.99,
             category: 'post-apocalyptic',
             description: `The year is 2033. The world has been reduced to rubble. 
                 Humanity is nearly extinct. The half-destroyed cities have become 
@@ -69,6 +69,51 @@ export default class BookstoreService {
                 in his hands, the whole Metro - and maybe the whole of humanity. Read 
                 by Rupert Degas (p) 2012 Orion Publishing Group`,
             img: 'https://images2.medimops.eu/product/230384/M03453316312-source.jpg'
+        },
+        {
+            id: 3,
+            title: 'Jurassic Park',
+            author: 'Michael Crichton',
+            price: 8.22,
+            category: 'fantasy',
+            description: `The year is 2033. The world has been reduced to rubble. 
+                Humanity is nearly extinct. The half-destroyed cities have become 
+                uninhabitable through radiation. Beyond their boundaries, they say, 
+                lie endless burned-out deserts and the remains of splintered forests. 
+                Survivors still remember the past greatness of humankind. But the last 
+                remains of civilisation have already become a distant memory, the stuff 
+                of myth and legend. `,
+            img: 'https://images2.medimops.eu/product/62a905/M0345381150X-source.jpg'
+        },
+        {
+            id: 5,
+            title: 'Asylum',
+            author: 'Madeleine Roux',
+            price: 4.87,
+            category: 'horror',
+            description: `The year is 2033. The world has been reduced to rubble. 
+                Humanity is nearly extinct. The half-destroyed cities have become 
+                uninhabitable through radiation. Beyond their boundaries, they say, 
+                lie endless burned-out deserts and the remains of splintered forests. 
+                Survivors still remember the past greatness of humankind. But the last 
+                remains of civilisation have already become a distant memory, the stuff 
+                of myth and legend. `,
+            img: 'https://images2.medimops.eu/product/d52d0a/M00062220969-source.jpg'
+        },
+        {
+            id: 6,
+            title: 'Metro 2035',
+            author: 'Dmitriy Gluhovskiy',
+            price: 9.99,
+            category: 'post-apocalyptic',
+            description: `The year is 2033. The world has been reduced to rubble. 
+                Humanity is nearly extinct. The half-destroyed cities have become 
+                uninhabitable through radiation. Beyond their boundaries, they say, 
+                lie endless burned-out deserts and the remains of splintered forests. 
+                Survivors still remember the past greatness of humankind. But the last 
+                remains of civilisation have already become a distant memory, the stuff 
+                of myth and legend. `,
+            img: 'https://images2.medimops.eu/product/eee1ed/M03453319028-source.jpg'
         }
     ];
 

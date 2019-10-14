@@ -56,9 +56,10 @@ const BookPage = ({ id, title, author, price, description, img, bookAddedToCart 
             <div className="card-body">
                 <img className="card-img-top" style={{maxWidth: '200px', float: 'left', marginRight: '10px'}} src={img} alt={title} />
                 <h5 className="card-title">{title}</h5>
+                <p className="card-text">${price}</p>
                 <p className="card-text">{description}</p>
                 <button 
-                    onClick={() => bookAddedToCart(id)}
+                    onClick={() => bookAddedToCart(+id)}
                     className="btn btn-info add-to-cart">
                     Add to cart
                 </button>
@@ -68,7 +69,7 @@ const BookPage = ({ id, title, author, price, description, img, bookAddedToCart 
 };
 
 const mapStateToProps = (state) => {
-    return state;
+    return {};
 };
 
 const mapDispatchToProps = (dispatch) => {
