@@ -22,8 +22,11 @@ class BookListContainer extends Component {
     }
 
     render() {
-        const { books, error, loading, bookAddedToCart, searchTerm, checkedCategories, maxPrice } = this.props;
-        const renderBooks = onSearch(onCategoriesFilter(onMaxPriceFilter(books, maxPrice), checkedCategories, maxPrice), searchTerm);
+        const { books, error, loading, bookAddedToCart, searchTerm, checkedCategories, maxPrice, selectedSort } = this.props;
+        const renderBooks = onSearch(
+            onCategoriesFilter(
+                onMaxPriceFilter(
+                    onSortFilter(books, selectedSort), maxPrice), checkedCategories, maxPrice), searchTerm);
         if( error ) {
             return <ErrorIndicator />
         }
@@ -66,12 +69,29 @@ const onSearch = (books, searchTerm) => {
 const onCategoriesFilter = (books, checkedCategories) => {
     if( checkedCategories.length === 0 ) return books;
     return books.filter(({category}) => checkedCategories.some(({name}) => category === name));
-}
+};
 
 const onMaxPriceFilter = (books, maxPrice) => {
     if( maxPrice === 0 ) return books;
     return books.filter(({price}) => price <= maxPrice);
-}
+};
+
+const onSortFilter = (books, sortValue) => {
+    switch(sortValue) {
+        case 'new':
+            return onFilter(books, 'id', -1);
+        case 'toExp':
+            return onFilter(books, 'price', 1);
+        case 'toCheap':
+            return onFilter(books, 'price', -1);
+        default:
+            return books;
+    }
+};
+
+const onFilter = (books, property, quantity) => {
+    return books.sort((a,b) => (a[property] > b[property]) ? 1*quantity : ((b[property] > a[property]) ? -1*quantity : 0));
+};
 
 const mapStateToProps = (state) => {
     return {
@@ -80,7 +100,8 @@ const mapStateToProps = (state) => {
         error: state.bookList.error,
         searchTerm: state.filter.searchTerm,
         checkedCategories: state.filter.checkedCategories,
-        maxPrice: state.filter.maxPrice
+        maxPrice: state.filter.maxPrice,
+        selectedSort: state.filter.selectedSort
         /* 
         передать свойство books в компонент (this.props.books), 
         значение которого взято из state

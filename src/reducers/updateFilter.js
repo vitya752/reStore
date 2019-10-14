@@ -1,5 +1,11 @@
 const updateFilter = (state, action) => {
 
+    const sortTypes = [
+        { label: 'By novelty', value: 'new' },
+        { label: 'From cheap to expensive', value: 'toExp' },
+        { label: 'From expensive to cheap', value: 'toCheap' }
+    ]
+
     if( state === undefined ) {
         return {
             searchTerm: '',
@@ -9,7 +15,9 @@ const updateFilter = (state, action) => {
                 { id: 3, label: 'Horror', name: 'horror', checked: false }
             ],
             checkedCategories: [],
-            maxPrice: 100
+            maxPrice: 100,
+            sortTypes: sortTypes,
+            selectedSort: sortTypes[0].value
         }
     }
 
@@ -26,8 +34,13 @@ const updateFilter = (state, action) => {
                 ...state.filter,
                 maxPrice: action.payload
             };
+            case 'SORT_CHANGE_VALUE':
+                return {
+                    ...state.filter,
+                    selectedSort: action.payload
+                }
             default:
-            return state.filter;
+                return state.filter;
     }
 
 }

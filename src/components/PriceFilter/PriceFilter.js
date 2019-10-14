@@ -10,7 +10,7 @@ const PriceFilter = ({ maxPrice, maxPriceChangeValue }) => {
         <div className="filter mb-3">
             <span className="name-filter">Max price: ${maxPrice}</span>
             <Slider
-                xmax={300}
+                xmax={100}
                 className="price-filter"
                 axis="x"
                 x={maxPrice}
@@ -19,12 +19,6 @@ const PriceFilter = ({ maxPrice, maxPriceChangeValue }) => {
         </div>
     )
 }
-
-// const maxPriceFromBooks = (books) => {
-//     const prices = books.map(({price}) => price);
-//     console.log(Math.max(...prices));
-//     return Math.max(...prices);
-// }
 
 const mapStateToProps = (state) => {
     return {

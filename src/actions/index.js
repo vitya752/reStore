@@ -60,6 +60,14 @@ const maxPriceChangeValue = (value) => {
     }
 }
 
+const sortChangeValue = (value) => {
+    console.log(value);
+    return {
+        type: 'SORT_CHANGE_VALUE',
+        payload: value
+    }
+}
+
 export {
     booksLoaded,
     booksRequested,
@@ -69,5 +77,6 @@ export {
     bookDecreaseCart,
     formSubmitSearchTerm,
     checkboxChangeStatus,
-    maxPriceChangeValue
+    maxPriceChangeValue,
+    sortChangeValue
 }
