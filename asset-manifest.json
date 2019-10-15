@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/reStore/static/css/main.ea37fbda.chunk.css",
+    "main.css": "/reStore/static/css/main.bead048c.chunk.css",
     "main.js": "/reStore/static/js/main.5ea83f7b.chunk.js",
     "main.js.map": "/reStore/static/js/main.5ea83f7b.chunk.js.map",
     "runtime-main.js": "/reStore/static/js/runtime-main.40941a94.js",
@@ -8,8 +8,8 @@
     "static/js/2.3ad69e2f.chunk.js": "/reStore/static/js/2.3ad69e2f.chunk.js",
     "static/js/2.3ad69e2f.chunk.js.map": "/reStore/static/js/2.3ad69e2f.chunk.js.map",
     "index.html": "/reStore/index.html",
-    "precache-manifest.e8fbd8bbbb784dd19050e4651e93103b.js": "/reStore/precache-manifest.e8fbd8bbbb784dd19050e4651e93103b.js",
+    "precache-manifest.11225d668f377baf1b4bbeb3d0578bb3.js": "/reStore/precache-manifest.11225d668f377baf1b4bbeb3d0578bb3.js",
     "service-worker.js": "/reStore/service-worker.js",
-    "static/css/main.ea37fbda.chunk.css.map": "/reStore/static/css/main.ea37fbda.chunk.css.map"
+    "static/css/main.bead048c.chunk.css.map": "/reStore/static/css/main.bead048c.chunk.css.map"
   }
 }
