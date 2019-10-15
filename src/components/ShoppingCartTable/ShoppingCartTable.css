@@ -9,3 +9,11 @@
     text-align: right;
     font-size: 1.3rem;
 }
+@media screen and (max-device-width: 575.98px){
+    .shopping-cart-table{
+        overflow: scroll;
+    }
+    .shopping-cart-table .table{
+        width: 450px;
+    }
+}

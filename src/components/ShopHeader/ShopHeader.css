@@ -1,7 +1,6 @@
 .shop-header{
     display: flex;
     padding: 0 1rem;
-    align-items: center;
     justify-content: space-between;
 }
 .shop-header a{
@@ -11,6 +10,32 @@
     font-size: 2.5rem;
     font-family: "Playfair Display", Georgia, serif;
 }
+.shop-header .order{
+    font-size: 1.5rem;
+    font-family: Georgia, serif;
+}
 .shop-header .icon-cart{
     margin-right: 5px;
 }
+
+@media screen and (max-device-width: 575.98px){
+    .shop-header .logo{
+        font-size: 1.8rem;
+    }
+    .shop-header .order{
+        font-size: 0.8rem;
+    }
+}
+
+    /* // .shop-header
+    // display: flex
+    // padding: 0 1rem
+    // align-items: center
+    // justify-content: space-between
+    // a
+    //     text-decoration: none
+    // .logo
+    //     font-size: 2.5rem
+    //     font-family: "Playfair Display", Georgia, serif
+    // .icon-cart
+    //     margin-right: 5px */

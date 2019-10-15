@@ -21,3 +21,19 @@
 .book-list-item .book-details .book-price{
     font-size: 1.4rem;
 }
+@media screen and (max-device-width: 767.98px){
+    .book-list-item .book-cover img{
+        height: 200px;
+    }
+}
+@media screen and (max-device-width: 575.98px){
+    .book-list-item .book-details .book-author {
+        font-size: 0.7rem;
+    }
+    .book-list-item .book-details .book-title {
+        font-size: 1rem;
+    }
+    .book-list-item .book-details .book-price {
+        font-size: 1.2rem;
+    }
+}

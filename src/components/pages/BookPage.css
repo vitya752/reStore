@@ -1,0 +1,16 @@
+.card-img-custom{
+    max-width: 200px; 
+    float: left;
+    margin-right: 10px;
+}
+@media screen and (max-device-width: 575.98px){
+    .card-img-custom{
+        float: none;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+    .card-body{
+        text-align: center;
+    }
+}

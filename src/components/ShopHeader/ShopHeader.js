@@ -5,11 +5,11 @@ import './ShopHeader.css';
 
 const ShopHeader = ({numItems, total}) => {
     return(
-        <header className="row shop-header mb-3">
-            <Link to="/reStore" className="col-12 col-md-3 logo text-dark">BookStore</Link>
+        <header className="row align-items-center shop-header mb-3">
+            <Link to="/reStore" className="col-6 col-lg-3 logo text-dark">BookStore</Link>
             <Search />
-            <Link to="/reStore/cart">
-                <i className="col-12 col-md-3 icon-cart fa fa-shopping-cart"></i>
+            <Link to="/reStore/cart" className="order text-right col-6 order-1 order-lg-0 col-lg-3">
+                <i className="icon-cart fa fa-shopping-cart"></i>
                 {numItems} items (${total})
             </Link>
         </header>

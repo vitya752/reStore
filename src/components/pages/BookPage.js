@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { bookAddedToCart } from './../../actions';
 import withBookstoreService from '../hoc/with-bookstore-service';
+import './BookPage.css';
 
 class BookPageContainer extends Component {
 
@@ -54,7 +55,7 @@ const BookPage = ({ id, title, author, price, description, img, bookAddedToCart 
                 {title} - {author}
             </div>
             <div className="card-body">
-                <img className="card-img-top" style={{maxWidth: '200px', float: 'left', marginRight: '10px'}} src={img} alt={title} />
+                <img className="card-img-top card-img-custom" src={img} alt={title} />
                 <h5 className="card-title">{title}</h5>
                 <p className="card-text">${price}</p>
                 <p className="card-text">{description}</p>

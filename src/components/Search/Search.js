@@ -35,7 +35,7 @@ class SearchContainer extends Component {
 const Search = ({ onSubmit, onChangeTerm, searchTerm, disableSubmit }) => {
     return (
         <form 
-            className="col-12 col-md-6"
+            className="col-12 order-12 order-lg-0 col-lg-6"
             onSubmit={onSubmit}>
             <div className="input-group">
                 <input 
