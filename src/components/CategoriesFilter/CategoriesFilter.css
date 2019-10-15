@@ -1,17 +1,22 @@
 .genres .genres-item > div{
+    padding-left: 0;
     position: relative;
 }
 .genres .genres-item input{
     left: -999px;
 }
 .genres .genres-item label{
+    z-index: 1;
     display: block;
     cursor: pointer;
+    position: relative;
+    padding-left: 15px;
 }
 .genres .genres-item > div:before,
 .genres .genres-item .check-indicator{
     content: '';
     display: block;
+    cursor: pointer;
     position: absolute;
 }
 .genres .genres-item > div:before{
