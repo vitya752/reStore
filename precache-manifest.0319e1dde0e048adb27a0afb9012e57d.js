@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "76b8e5c1e63ce3edfce49b9a4818569a",
+    "revision": "b14500f07dabb98ef9d8336af288c290",
     "url": "/reStore/index.html"
   },
   {
